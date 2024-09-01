@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Chao
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Ground\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=Chao()
+comment2.params=largura\ altura
+comment2.target=Chao(int,\ int)
+comment3.params=
+comment3.target=void\ act()
+numComments=4
