@@ -126,6 +126,12 @@ public class Jogador extends Actor
             return false;
         }
         
+        if (isTouching(Chao.class) && !estaNoChao() &&
+        getOneObjectAtOffset(larguraJogador / -2 - 5, alturaJogador / 2, Chao.class) == null &&
+        getOneObjectAtOffset(larguraJogador / -2 - 5, alturaJogador / -2, Chao.class) == null) {
+            return false;
+        }
+        
         return true;
     }
     
@@ -144,6 +150,12 @@ public class Jogador extends Actor
         }
         
         if (getOneObjectAtOffset(larguraJogador / 2 + 5, alturaJogador / 2 - 1, Chao.class) != null &&
+        getOneObjectAtOffset(larguraJogador / 2 + 5, alturaJogador / -2, Chao.class) == null) {
+            return false;
+        }
+        
+        if (isTouching(Chao.class) && !estaNoChao() &&
+        getOneObjectAtOffset(larguraJogador / 2 + 5, alturaJogador / 2, Chao.class) == null &&
         getOneObjectAtOffset(larguraJogador / 2 + 5, alturaJogador / -2, Chao.class) == null) {
             return false;
         }
