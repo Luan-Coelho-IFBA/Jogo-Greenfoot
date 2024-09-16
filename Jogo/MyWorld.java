@@ -26,6 +26,7 @@ public class MyWorld extends World
      */
     private void prepare()
     {
+        Greenfoot.setSpeed(50);
         Sol sol = new Sol();
         addObject(sol,548,46);
         Nuvem1 nuvem1 = new Nuvem1();
@@ -48,5 +49,9 @@ public class MyWorld extends World
         Grama grama3 = new Grama(700, 50);
         addObject(grama3,326,350);
         grama3.setLocation(325,481);
+        Grama grama4 = new Grama(300, 60);
+        addObject(grama4,354,265);
+        grama4.setLocation(328,325);
+        jogador.setLocation(50,421);
     }
 }

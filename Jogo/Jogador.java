@@ -15,6 +15,7 @@ public class Jogador extends Actor
     private int velocidade;
     private boolean temPuloDuplo = true;
     private boolean duploPulo = true;
+    private int tiroCollDown = 0;
     
     public Jogador() {
         this.vida = 100;
@@ -28,6 +29,7 @@ public class Jogador extends Actor
         pular();
         verificarBateuCabeca();
         ajeitarPosicao();
+        atirar();
         setLocation(getX(), getY() + velocidade);
     }
     
@@ -82,6 +84,23 @@ public class Jogador extends Actor
             velocidade = 0;
         }
     }
+    
+    public void atirar() {
+        MouseInfo mouse = Greenfoot.getMouseInfo();
+        
+        tiroCollDown--;
+        
+        if (mouse != null && tiroCollDown <= 0) {
+            int button = mouse.getButton();
+            
+            if (button == 1) {
+                Tiro tiro = new Tiro();
+                getWorld().addObject(tiro, getX(), getY());
+                tiro.turnTowards(mouse.getX(), mouse.getY());
+                tiroCollDown = 20;
+            }
+        }
+     }
     
     public boolean estaNoChao() {
         if (getY() >= getWorld().getHeight() - 30) {

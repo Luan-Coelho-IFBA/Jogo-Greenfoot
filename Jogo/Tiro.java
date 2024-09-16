@@ -8,11 +8,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Tiro extends Actor
 {
-    private int dano;
-    private int velocidade;
+    public static int dano = 20;
+    private int velocidade = 6;
     
     public void act()
     {
-        // Add your action code here.
+        move(velocidade);
+        checkIfReachEnd();
+    }
+    
+    public void checkIfReachEnd() {
+        if (isAtEdge() || isTouching(Chao.class)) {
+            getWorld().removeObject(this);
+        }
     }
 }
