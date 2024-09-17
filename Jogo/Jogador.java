@@ -8,13 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Jogador extends Actor
 {
-    private int vida;
+    private static int vida;
     
     private int velocidadeAndar = 4;
     private final int GRAVIDADE = 1;
     private int velocidade;
-    private boolean temPuloDuplo = true;
-    private boolean duploPulo = true;
+    private static boolean temPuloDuplo = false;
+    private static boolean duploPulo = true;
     private int tiroCollDown = 0;
     
     public Jogador() {
@@ -103,11 +103,6 @@ public class Jogador extends Actor
      }
     
     public boolean estaNoChao() {
-        if (getY() >= getWorld().getHeight() - 30) {
-            duploPulo = true;
-            return true;
-        }
-        
         int larguraJogador = getImage().getWidth();
         int alturaJogador = getImage().getHeight();
         

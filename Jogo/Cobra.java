@@ -9,25 +9,32 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Cobra extends Inimigo
 {
     private int vida = 100;
-    private int velocidade = 4;
+    private int velocidade = -2;
     private boolean acertadoPorTiro = false;
+    private final int QUANTIDADE_PASSOS;
+    private int contagemPassos;
+    
+    public Cobra(int contagem) {
+        QUANTIDADE_PASSOS = contagem;
+        contagemPassos = QUANTIDADE_PASSOS;
+    }
     
     public void act()
     {
         cair();
-        ajeitarPosicao();
         andar();
-        setLocation(getX(), getY() + super.velocidade);
+        ajeitarPosicao();
+        setLocation(getX() + velocidade, getY() + super.velocidade);
         tomarDano();
     }
     
     public void andar() {
-        int larguraCobra = getImage().getWidth();
-        int alturaCobra = getImage().getHeight();
-        
-        if (getOneObjectAtOffset(larguraCobra / -2, alturaCobra / -2, Chao.class) == null &&
-        getOneObjectAtOffset(larguraCobra / 2, alturaCobra / -2, Chao.class) != null) {
-            
+        if (contagemPassos <= 0) {
+            velocidade = -velocidade;
+            contagemPassos = QUANTIDADE_PASSOS;
+            getImage().mirrorHorizontally();
+        } else {
+            contagemPassos--;
         }
     }
     

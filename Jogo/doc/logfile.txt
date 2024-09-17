@@ -20,10 +20,18 @@ C:\Users\luanc\Documents\GitHub\Jogo-Greenfoot\Jogo\doc
 UTF-8
 -charset
 UTF-8
-C:\Users\luanc\Documents\GitHub\Jogo-Greenfoot\Jogo\Tiro.java
+C:\Users\luanc\Documents\GitHub\Jogo-Greenfoot\Jogo\W1_1.java
 <---- end of javadoc command ---->
-Loading source file C:\Users\luanc\Documents\GitHub\Jogo-Greenfoot\Jogo\Tiro.java...
-C:\Users\luanc\Documents\GitHub\Jogo-Greenfoot\Jogo\Tiro.java:16: error: ';' expected
-        turnTowards(0, _int_)
-                             ^
-1 error
+Loading source file C:\Users\luanc\Documents\GitHub\Jogo-Greenfoot\Jogo\W1_1.java...
+Constructing Javadoc information...
+warning: unknown enum constant Tag.Any
+  reason: class file for threadchecker.Tag not found
+warning: unknown enum constant Tag.Any
+warning: unknown enum constant Tag.Any
+warning: unknown enum constant Tag.Any
+Standard Doclet version 17.0.4.1+1
+Building tree for all the packages and classes...
+Generating C:\Users\luanc\Documents\GitHub\Jogo-Greenfoot\Jogo\doc\W1_1.html...
+Generating C:\Users\luanc\Documents\GitHub\Jogo-Greenfoot\Jogo\doc\package-summary.html...
+Generating C:\Users\luanc\Documents\GitHub\Jogo-Greenfoot\Jogo\doc\index.html...
+4 warnings
