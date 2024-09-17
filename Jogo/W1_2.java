@@ -22,16 +22,21 @@ public class W1_2 extends W1
     }
     
     public void act() {
-        if (super.jogador.isAtEdge()) {
-            if (super.jogador.getX() <= 20) {
-                Greenfoot.setWorld(mundoPassado);
-                super.jogador.setLocation(super.jogador.getX() + 10, super.jogador.getY());
-            } else if (super.jogador.getY() >= getHeight() - 10) {
+        if (super.jogador != null) {
+            if (super.jogador.isAtEdge()) {
+                if (super.jogador.getX() <= 20) {
+                    Greenfoot.setWorld(mundoPassado);
+                    super.jogador.setLocation(super.jogador.getX() + 10, super.jogador.getY());
+                } else if (super.jogador.getY() >= getHeight() - 10) {
                 Greenfoot.setWorld(mundoAbaixo);
-            } else if (super.jogador.getX() >= getWidth() - 5) {
-                Greenfoot.setWorld(mundoLado);
-                super.jogador.setLocation(super.jogador.getX() - 10, super.jogador.getY());
+                } else if (super.jogador.getX() >= getWidth() - 5) {
+                    Greenfoot.setWorld(mundoLado);
+                    super.jogador.setLocation(super.jogador.getX() - 10, super.jogador.getY());
+                }
             }
+        
+            super.mostrarVida();
+            super.tomarDano();
         }
     }
     

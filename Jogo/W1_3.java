@@ -18,9 +18,14 @@ public class W1_3 extends W1
     }
     
     public void act() {
-        if (super.jogador.getX() <= 20) {
+        if (super.jogador != null) {
+            if (super.jogador.getX() <= 20) {
             Greenfoot.setWorld(w1_2);
             super.jogador.setLocation(super.jogador.getX() + 10, super.jogador.getY());
+        }
+        
+        super.mostrarVida();
+        super.tomarDano();
         }
     }
     

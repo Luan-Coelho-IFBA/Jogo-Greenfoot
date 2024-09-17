@@ -17,9 +17,13 @@ public class W1_1 extends W1
     }
     
     public void act() {
-        if (super.jogador.isAtEdge()) {
-            Greenfoot.setWorld(w1_2);
-            super.jogador.setLocation(super.jogador.getX() - 10, super.jogador.getY());
+        if (super.jogador != null) {
+            if (super.jogador.isAtEdge()) {
+                Greenfoot.setWorld(w1_2);
+                super.jogador.setLocation(super.jogador.getX() - 10, super.jogador.getY());
+            }
+            super.tomarDano();
+            super.mostrarVida();
         }
     }
     

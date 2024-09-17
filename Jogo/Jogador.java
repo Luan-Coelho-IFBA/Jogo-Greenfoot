@@ -8,17 +8,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Jogador extends Actor
 {
-    private static int vida;
-    
     private int velocidadeAndar = 4;
     private final int GRAVIDADE = 1;
     private int velocidade;
     private static boolean temPuloDuplo = false;
     private static boolean duploPulo = true;
     private int tiroCollDown = 0;
+    private int danoCollDown = 0;
     
     public Jogador() {
-        this.vida = 100;
         this.velocidade = 0;
     }
     
@@ -101,6 +99,17 @@ public class Jogador extends Actor
             }
         }
      }
+     
+    public boolean estaTocandoInimigo() {
+        if (isTouching(Inimigo.class) && danoCollDown <= 0) {
+            danoCollDown = 20;
+            return true;
+        } else {
+            danoCollDown--;
+        }
+        
+        return false;
+    }
     
     public boolean estaNoChao() {
         int larguraJogador = getImage().getWidth();
