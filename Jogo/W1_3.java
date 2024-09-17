@@ -40,7 +40,10 @@ public class W1_3 extends W1
         grama.setLocation(300,575);
         Jogador jogador = new Jogador();
         addObject(jogador,24,471);
-        Cobra cobra = new Cobra(270);
-        addObject(cobra,577,464);
+        Cobra cobra = new Cobra(250);
+        addObject(cobra,550,464);
+        Grama grama2 = new Grama(15, 600);
+        addObject(grama2,423,232);
+        grama2.setLocation(602,296);
     }
 }

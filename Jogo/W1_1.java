@@ -54,5 +54,7 @@ public class W1_1 extends W1
         addObject(jogador,111,391);
         Cobra cobra = new Cobra(135);
         addObject(cobra,575,345);
+        Grama grama5 = new Grama(300, 120);
+        addObject(grama5,472,500);
     }
 }
