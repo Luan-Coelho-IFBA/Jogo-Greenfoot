@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class W1_1 extends W1
 {
-    private W1_2 proximoMundo = new W1_2(this);
+    private W1_2 w1_2 = new W1_2(this);
     
     public W1_1()
     {
@@ -18,7 +18,7 @@ public class W1_1 extends W1
     
     public void act() {
         if (super.jogador.isAtEdge()) {
-            Greenfoot.setWorld(proximoMundo);
+            Greenfoot.setWorld(w1_2);
             super.jogador.setLocation(super.jogador.getX() - 10, super.jogador.getY());
         }
     }

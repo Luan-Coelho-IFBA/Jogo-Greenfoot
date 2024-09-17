@@ -7,10 +7,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class W1 extends MyWorld
-{
-    protected W1_1 w1 = new W1_1();
-    
+{    
     public W1()
     {
+  
     }
 }
