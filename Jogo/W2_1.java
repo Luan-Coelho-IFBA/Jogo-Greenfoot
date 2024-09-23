@@ -6,11 +6,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class W1_1 extends W1
+public class W2_1 extends W1
 {
     private Jogar mundo;
     
-    public W1_1(Jogar mundo)
+    public W2_1(Jogar mundo)
     {
         prepare();
         this.mundo = mundo;
@@ -19,7 +19,7 @@ public class W1_1 extends W1
     
     public void act() {
         if (super.jogador != null) {
-            super.irPraDireita(jogador, mundo.w1_2);
+            super.irPraDireita(jogador, mundo.w2_2);
             super.tomarDano();
             super.mostrarVida();
         }

@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class W1_2 here.
+ * Write a description of class W0_2 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class W1_2 extends W1
 {
     private Jogar mundo;
-    
+
     public W1_2(Jogar mundo)
     {
         prepare();
@@ -19,10 +19,7 @@ public class W1_2 extends W1
     
     public void act() {
         if (super.jogador != null) {
-            super.irPraDireita(jogador, mundo.w1_3);
-            super.irParaEsquerda(jogador, mundo.w1_1);
             super.irParaBaixo(jogador, mundo.w0_2);
-        
             super.mostrarVida();
             super.tomarDano();
         }
@@ -34,19 +31,32 @@ public class W1_2 extends W1
      */
     private void prepare()
     {
-
-        Grama grama = new Grama(200, 290);
-        addObject(grama,300,333);
-        grama.setLocation(100,533);
-        Grama grama2 = new Grama(300, 120);
-        addObject(grama2,200,455);
-        grama2.setLocation(460,570);
+        Grama grama = new Grama(60, 150);
+        addObject(grama,213,337);
+        grama.setLocation(184,70);
+        Grama grama2 = new Grama(60, 150);
+        addObject(grama2,383,252);
+        grama2.setLocation(365,70);
+        Grama grama3 = new Grama(300, 700);
+        addObject(grama3,250,378);
+        grama3.setLocation(80,335);
+        Grama grama4 = new Grama(300, 150);
+        addObject(grama4,450,132);
+        grama4.setLocation(520,70);
         Jogador jogador = new Jogador();
-        addObject(jogador,32,350);
-        Cobra cobra = new Cobra(100);
-        addObject(cobra,572,474);
-        Grama grama3 = new Grama(60, 20);
-        addObject(grama3,255,410);
-        grama3.setLocation(217,425);
+        addObject(jogador,277,26);
+        Grama grama5 = new Grama(300, 60);
+        addObject(grama5,359,326);
+        grama5.setLocation(350,296);
+        Grama grama6 = new Grama(300, 300);
+        addObject(grama6,553,470);
+        grama6.setLocation(484,570);
+        Cobra cobra = new Cobra(60);
+        addObject(cobra,506,232);
+        Cobra cobra2 = new Cobra(110);
+        addObject(cobra2,555,390);
+        cobra.setLocation(478,249);
+        Grama grama7 = new Grama(15, 300);
+        addObject(grama7, 599, 290);
     }
 }

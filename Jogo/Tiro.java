@@ -1,12 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Bullet here.
+ * Write a description of class Tiro here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Tiro extends Actor
+public class Tiro extends Projetil
 {
     public static int dano = 20;
     private int velocidade = 6;
@@ -14,12 +14,6 @@ public class Tiro extends Actor
     public void act()
     {
         move(velocidade);
-        checkIfReachEnd();
-    }
-    
-    public void checkIfReachEnd() {
-        if (isAtEdge() || isTouching(Chao.class)) {
-            getWorld().removeObject(this);
-        }
+        super.checkIfReachEnd();
     }
 }
