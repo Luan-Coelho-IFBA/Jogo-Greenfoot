@@ -8,20 +8,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class W1_1 extends W1
 {
-    private W1_2 w1_2 = new W1_2(this);
+    private Jogar mundo;
     
-    public W1_1()
+    public W1_1(Jogar mundo)
     {
         prepare();
+        this.mundo = mundo;
         super.jogador = getObjects(Jogador.class).get(0);
     }
     
     public void act() {
         if (super.jogador != null) {
-            if (super.jogador.isAtEdge()) {
-                Greenfoot.setWorld(w1_2);
-                super.jogador.setLocation(super.jogador.getX() - 10, super.jogador.getY());
-            }
+            super.irPraDireita(jogador, mundo.w1_2);
             super.tomarDano();
             super.mostrarVida();
         }

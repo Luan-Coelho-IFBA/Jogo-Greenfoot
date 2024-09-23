@@ -10,7 +10,7 @@ public class Jogador extends Actor
 {
     private int velocidadeAndar = 4;
     private final int GRAVIDADE = 1;
-    private int velocidade;
+    private static int velocidade;
     private static boolean temPuloDuplo = false;
     private static boolean duploPulo = true;
     private int tiroCollDown = 0;

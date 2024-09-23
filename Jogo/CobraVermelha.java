@@ -54,7 +54,7 @@ public class CobraVermelha extends Inimigo
         
         if (vida <= 0) {
             getWorld().removeObject(this);
-            vida = 100;
+            vida = 400;
         }
     }
 }

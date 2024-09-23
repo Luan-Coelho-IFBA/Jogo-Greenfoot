@@ -54,8 +54,10 @@ public class W0_2 extends W1
         grama6.setLocation(484,570);
         Cobra cobra = new Cobra(60);
         addObject(cobra,506,232);
-        Cobra cobra2 = new Cobra(120);
-        addObject(cobra2,573,387);
+        Cobra cobra2 = new Cobra(110);
+        addObject(cobra2,555,390);
         cobra.setLocation(478,249);
+        Grama grama7 = new Grama(15, 300);
+        addObject(grama7, 599, 290);
     }
 }

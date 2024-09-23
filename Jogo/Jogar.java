@@ -6,8 +6,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Jogar extends MyWorld
+public class Jogar extends W1
 {
+    public W1_1 w1_1 = new W1_1(this);
+    public W1_2 w1_2 = new W1_2(this);
+    public W1_3 w1_3 = new W1_3(this);
+    public W0_2 w0_2 = new W0_2();
 
     /**
      * Constructor for objects of class Jogar.
@@ -15,24 +19,10 @@ public class Jogar extends MyWorld
      */
     public Jogar()
     {
-
-        prepare();
+        Greenfoot.setSpeed(50);
     }
 
     public void act() {
-        Greenfoot.setWorld(new W1_1());
-    }
-    
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
-    private void prepare()
-    {
-        Grama grama = new Grama(700, 150);
-        addObject(grama,230,463);
-        grama.setLocation(321,567);
-        Jogador jogador = new Jogador();
-        addObject(jogador,26,460);
+        Greenfoot.setWorld(this.w1_1);
     }
 }
