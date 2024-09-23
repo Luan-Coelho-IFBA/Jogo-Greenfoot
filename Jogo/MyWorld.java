@@ -38,7 +38,16 @@ abstract public class MyWorld extends World
         if (jogador.isAtEdge()) {
             if (jogador.getY() >= getHeight() - 10) {
                 Greenfoot.setWorld(mundo);
-                jogador.setLocation(jogador.getX(), jogador.getY() - 11);
+                jogador.setLocation(jogador.getX(), jogador.getY() - 50);
+            }
+        }
+    }
+    
+    protected void irParaCima(Jogador jogador, MyWorld mundo) {
+        if (jogador.isAtEdge()) {
+            if (jogador.getY() <= 10) {
+                Greenfoot.setWorld(mundo);
+                jogador.setLocation(jogador.getX(), jogador.getY() + 11);
             }
         }
     }

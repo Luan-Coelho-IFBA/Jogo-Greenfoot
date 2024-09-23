@@ -23,8 +23,7 @@ public class W2_2 extends W1
             super.irParaEsquerda(jogador, mundo.w2_2);
             super.irParaBaixo(jogador, mundo.w1_2);
         
-            super.mostrarVida();
-            super.tomarDano();
+            super.processar();
         }
     }
     

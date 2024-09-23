@@ -11,10 +11,13 @@ public class Jogador extends Actor
     private int velocidadeAndar = 4;
     private final int GRAVIDADE = 1;
     private static int velocidade;
+    private final int PULO_ALTURA = -15;
     private static boolean temPuloDuplo = false;
     private static boolean duploPulo = true;
-    private int tiroCollDown = 0;
-    private int danoCollDown = 0;
+    private final int TIRO_COOLDOWN = 20;
+    private int tiroCoolDown = 0;
+    private final int DANO_COOLDOWN = 20;
+    private int danoCoolDown = 0;
     
     public Jogador() {
         this.velocidade = 0;
@@ -51,7 +54,7 @@ public class Jogador extends Actor
     
     public void pular() {
         if (estaNoChao() && Greenfoot.isKeyDown("space")) {
-            velocidade = -15;
+            velocidade = PULO_ALTURA;
         }
         
         if (!estaNoChao() && Greenfoot.isKeyDown("space") &&
@@ -86,26 +89,38 @@ public class Jogador extends Actor
     public void atirar() {
         MouseInfo mouse = Greenfoot.getMouseInfo();
         
-        tiroCollDown--;
+        tiroCoolDown--;
         
-        if (mouse != null && tiroCollDown <= 0) {
+        if (mouse != null && tiroCoolDown <= 0) {
             int button = mouse.getButton();
             
             if (button == 1) {
                 Tiro tiro = new Tiro();
                 getWorld().addObject(tiro, getX(), getY());
                 tiro.turnTowards(mouse.getX(), mouse.getY());
-                tiroCollDown = 20;
+                tiroCoolDown = TIRO_COOLDOWN;
             }
         }
      }
      
     public boolean estaTocandoInimigo() {
-        if (isTouching(Inimigo.class) && danoCollDown <= 0) {
-            danoCollDown = 20;
+        if (isTouching(Inimigo.class) && danoCoolDown <= 0) {
+            danoCoolDown = DANO_COOLDOWN;
             return true;
         } else {
-            danoCollDown--;
+            danoCoolDown--;
+        }
+        
+        return false;
+    }
+    
+    public boolean estaTocandoCuspe() {
+        if (isTouching(Cuspe.class)) {
+            danoCoolDown = DANO_COOLDOWN;
+            Actor cuspe = getOneIntersectingObject(Cuspe.class);
+            getWorld().removeObject(cuspe);
+            
+            return true;
         }
         
         return false;

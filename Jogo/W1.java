@@ -15,9 +15,18 @@ public class W1 extends MyWorld
         vida = 100;
     }
     
-    protected void tomarDano() {
+    protected void processar() {
+        tomarDano();
+        mostrarVida();
+    }
+    
+    private void tomarDano() {
         if (super.jogador.estaTocandoInimigo()) {
             this.vida -= 20;
+        }
+        
+        if (super.jogador.estaTocandoCuspe()) {
+            this.vida -= Cuspe.dano;
         }
         
         if (this.vida <= 0) {
@@ -26,6 +35,6 @@ public class W1 extends MyWorld
         }
     }
     
-    protected void mostrarVida() {
+    private void mostrarVida() {
     }
 }

@@ -8,12 +8,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Cuspe extends Projetil
 {
-    /**
-     * Act - do whatever the Cuspe wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    public static int dano = 20;
+    private int velocidade = 4;
+    
     public void act()
     {
-        // Add your action code here.
+        move(velocidade);
+        this.checkIfReachEnd();
+    }
+    
+    @Override()
+    public void checkIfReachEnd() {
+        if (isAtEdge()) {
+            getWorld().removeObject(this);
+        }
     }
 }

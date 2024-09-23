@@ -9,4 +9,6 @@ comment3.params=jogador\ mundo
 comment3.target=void\ irParaEsquerda(Jogador,\ MyWorld)
 comment4.params=jogador\ mundo
 comment4.target=void\ irParaBaixo(Jogador,\ MyWorld)
-numComments=5
+comment5.params=jogador\ mundo
+comment5.target=void\ irParaCima(Jogador,\ MyWorld)
+numComments=6

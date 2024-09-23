@@ -21,6 +21,13 @@ public class W0_2 extends W1
         super.jogador = getObjects(Jogador.class).get(0);
     }
     
+    public void act() {
+        if (super.jogador != null) {
+            super.irPraDireita(jogador, mundo.w0_3);
+            super.processar();
+        }
+    }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -29,8 +36,8 @@ public class W0_2 extends W1
     {
         Jogador jogador = new Jogador();
         addObject(jogador,300,11);
-        Grama grama = new Grama(250, 30);
-        addObject(grama,124,200);
+        Grama grama = new Grama(275, 500);
+        addObject(grama,127,434);
         Grama grama2 = new Grama(250, 30);
         addObject(grama2, 476, 200);
         Grama grama3 = new Grama(30, 250);
@@ -39,5 +46,9 @@ public class W0_2 extends W1
         addObject(grama4, 250, 90);
         Grama grama5 = new Grama(700, 60);
         addObject(grama5, 350, 600);
+        Lhama lhama = new Lhama();
+        addObject(lhama,470,155);
+        Lhama lhama2 = new Lhama();
+        addObject(lhama2,125,153);
     }
 }

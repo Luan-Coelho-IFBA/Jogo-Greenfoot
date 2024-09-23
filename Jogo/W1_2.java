@@ -20,8 +20,7 @@ public class W1_2 extends W1
     public void act() {
         if (super.jogador != null) {
             super.irParaBaixo(jogador, mundo.w0_2);
-            super.mostrarVida();
-            super.tomarDano();
+            super.processar();
         }
     }
     
