@@ -9,19 +9,46 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class W0_3 extends W1
 {
     private Jogar mundo;
+    private boolean rodaUmaVez = false;
     
     public W0_3(Jogar mundo)
     {
         prepare();
         this.mundo = mundo;
-        super.jogador = getObjects(Jogador.class).get(0);
     }
     
     public void act() {
+        if (!rodaUmaVez) {
+            if (mundo.posicao == Posicao.ESQUERDA) {
+                addObject(new Jogador(), 11, 520);
+            } else if (mundo.posicao == Posicao.CIMA) {
+                addObject(new Jogador() , 100, 11);
+            } else {
+                addObject(new Jogador(), 589, 520);
+            }
+            super.jogador = getObjects(Jogador.class).get(0);
+            rodaUmaVez = true;
+        }
+        
         if (super.jogador != null) {
-            super.irParaEsquerda(jogador, mundo.w0_2);
-            super.irParaCima(jogador, mundo.w1_3);
             super.processar();
+        }
+        if (super.jogador != null) {
+            if (super.irParaEsquerda(jogador, mundo.w0_2)) {
+                mundo.posicao = Posicao.DIREITA;
+                rodaUmaVez = false;
+                removeObject(jogador);
+            }
+            else if (super.irParaCima(jogador, mundo.w1_3)) {
+                mundo.posicao = Posicao.BAIXO;
+                rodaUmaVez = false;
+                removeObject(jogador);
+            }
+            else if (super.irPraDireita(jogador, mundo.w0_4)) {
+                mundo.posicao = Posicao.ESQUERDA;
+                rodaUmaVez = false;
+                removeObject(jogador);
+            };
         }
     }
     
@@ -33,7 +60,6 @@ public class W0_3 extends W1
     {
         addObject(new Grama(700, 60), 300, 580);
         addObject(new Grama(30, 400), 10, 200);
-        addObject(new Jogador(), 11, 520);
         addObject(new Grama(300, 470), 450, 235);
         addObject(new Grama(100, 40), 250, 450);
         addObject(new Grama(100, 40), 70, 350);

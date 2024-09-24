@@ -16,39 +16,55 @@ abstract public class MyWorld extends World
         super(600, 600, 1);
     }
     
-    protected void irPraDireita(Jogador jogador, MyWorld mundo) {
+    protected boolean irPraDireita(Jogador jogador, MyWorld mundo) {
         if (jogador.isAtEdge()) {
             if (jogador.getX() >= getWidth() - 10) {
                 Greenfoot.setWorld(mundo);
+                apagarBalas();
                 jogador.setLocation(jogador.getX() - 11, jogador.getY());
+                return true;
             }
         }
+        return false;
     }
     
-    protected void irParaEsquerda(Jogador jogador, MyWorld mundo) {
+    protected boolean irParaEsquerda(Jogador jogador, MyWorld mundo) {
         if (jogador.isAtEdge()) {
             if (jogador.getX() <= 10) {
                 Greenfoot.setWorld(mundo);
+                apagarBalas();
                 jogador.setLocation(jogador.getX() + 11, jogador.getY());
+                return true;
             }
         }
+        return false;
     }
     
-    protected void irParaBaixo(Jogador jogador, MyWorld mundo) {
+    protected boolean irParaBaixo(Jogador jogador, MyWorld mundo) {
         if (jogador.isAtEdge()) {
             if (jogador.getY() >= getHeight() - 10) {
                 Greenfoot.setWorld(mundo);
+                apagarBalas();
                 jogador.setLocation(jogador.getX(), jogador.getY() - 50);
+                return true;
             }
         }
+        return false;
     }
     
-    protected void irParaCima(Jogador jogador, MyWorld mundo) {
+    protected boolean irParaCima(Jogador jogador, MyWorld mundo) {
         if (jogador.isAtEdge()) {
             if (jogador.getY() <= 10) {
                 Greenfoot.setWorld(mundo);
+                apagarBalas();
                 jogador.setLocation(jogador.getX(), jogador.getY() + 11);
+                return true;
             }
         }
+        return false;
+    }
+    
+    private void apagarBalas() {
+        removeObjects(getObjects(Projetil.class));
     }
 }

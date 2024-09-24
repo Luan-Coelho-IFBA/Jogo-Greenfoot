@@ -12,6 +12,7 @@ public class W1 extends MyWorld
     
     public W1()
     {
+        super();
         vida = 100;
     }
     
