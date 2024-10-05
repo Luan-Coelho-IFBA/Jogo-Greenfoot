@@ -30,5 +30,7 @@ public class W1_5 extends W1
     private void prepare() {
         addObject(new Grama(700, 30), 300, 590); // Chão
         addObject(new Jogador(), 11, 545);
+        Castelo castelo = new Castelo();
+        addObject(castelo,580,527);
     }
 }

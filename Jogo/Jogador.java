@@ -96,7 +96,7 @@ public class Jogador extends Actor
             
             if (button == 1) {
                 Tiro tiro = new Tiro();
-                getWorld().addObject(tiro, getX(), getY());
+                getWorld().addObject(tiro, getX(), getY() - 20);
                 tiro.turnTowards(mouse.getX(), mouse.getY());
                 tiroCoolDown = TIRO_COOLDOWN;
             }
