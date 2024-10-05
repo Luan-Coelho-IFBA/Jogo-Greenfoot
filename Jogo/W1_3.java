@@ -50,12 +50,12 @@ public class W1_3 extends W1
         addObject(new Grama(30, 700), 10, 300);
         addObject(new Grama(700, 30), 300, 10);
         addObject(new Grama(500, 30), 400, 610);
-        addObject(new Grama(100, 40), 450, 490);
-        addObject(new Grama(30, 450), 590, 375);
-        addObject(new Grama(100, 40), 350, 390);
-        addObject(new Grama(100, 40), 250, 290);
-        addObject(new Grama(300, 40), 450, 170);
+        addObject(new Grama(100, 30), 450, 490);
+        addObject(new Grama(30, 450), 590, 385);
+        addObject(new Grama(100, 30), 350, 390);
+        addObject(new Grama(100, 30), 250, 290);
+        addObject(new Grama(300, 30), 450, 175);
         addObject(new Cobra(180), 540, 555);
-        addObject(new Lhama(), 500, 120);
+        addObject(new Lhama(), 500, 130);
     }
 }

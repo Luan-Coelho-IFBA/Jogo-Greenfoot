@@ -21,8 +21,10 @@ public class W1_4 extends W1
         if (!rodaUmaVez) {
             if (mundo.posicao == Posicao.ESQUERDA) {
                 addObject(new Jogador(), 11, 120);
-            } else {
+            } else if (mundo.posicao == Posicao.BAIXO) {
                 addObject(new Jogador(), 480, 520);
+            } else {
+                addObject(new Jogador(), 589, 120);
             }
             super.jogador = getObjects(Jogador.class).get(0);
             rodaUmaVez = true;
@@ -30,13 +32,20 @@ public class W1_4 extends W1
         
         if (jogador != null) {
             super.processar();
-            if (irParaBaixo(jogador, mundo.w0_4) && super.jogador != null) {
+        }
+        
+        if (jogador != null) {
+            if (irParaBaixo(jogador, mundo.w0_4)) {
                 mundo.posicao = Posicao.CIMA;
                 rodaUmaVez = false;
                 removeObject(jogador);
             }
-            else if (irParaEsquerda(jogador, mundo.w1_3) && super.jogador != null) {
+            else if (irParaEsquerda(jogador, mundo.w1_3)) {
                 mundo.posicao = Posicao.DIREITA;
+                rodaUmaVez = false;
+                removeObject(jogador);
+            } else if (irPraDireita(jogador, mundo.w1_5)) {
+                mundo.posicao = Posicao.ESQUERDA;
                 rodaUmaVez = false;
                 removeObject(jogador);
             }
@@ -47,7 +56,13 @@ public class W1_4 extends W1
         addObject(new Grama(450, 30), 225, 590); // Chão
         addObject(new Grama(700, 30), 300, 10); // Teto
         addObject(new Grama(30, 450), 10, 375); // Lateral esquerda
-        addObject(new Grama(30, 450), 590, 375);
-        addObject(new Grama(100, 40), 60, 170); // Plataforma esquerda
+        addObject(new Grama(30, 450), 590, 375); // Lateral direita
+        addObject(new Grama(100, 30), 60, 165); // Plataforma esquerda
+        addObject(new Grama(100, 30), 540, 165); // Plataforma direita
+        addObject(new Lhama(), 540, 120); // Lhama
+        addObject(new Grama(100, 30), 75, 480); // Plataforma #1
+        addObject(new Grama(100, 30), 210, 380); // Plataforma #2
+        addObject(new Grama(100, 30), 345, 280); // Plataforma #3
+        addObject(new Grama(150, 30), 500, 195); // Plataforma #4
     }
 }

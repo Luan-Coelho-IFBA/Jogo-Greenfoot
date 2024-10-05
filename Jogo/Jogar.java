@@ -18,6 +18,7 @@ public class Jogar extends W1
     public W1_3 w1_3 = new W1_3(this);
     public W0_4 w0_4 = new W0_4(this);
     public W1_4 w1_4 = new W1_4(this);
+    public W1_5 w1_5 = new W1_5(this);
 
     /**
      * Constructor for objects of class Jogar.

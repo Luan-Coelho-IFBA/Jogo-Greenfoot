@@ -20,7 +20,7 @@ public class W0_4 extends W1
     public void act() {
         if (!rodaUmaVez) {
             if (mundo.posicao == Posicao.CIMA) {
-                addObject(new Jogador(), 480, 11);
+                addObject(new Jogador(), 520, 11);
             } else {
                 addObject(new Jogador() , 11, 545);
             }
