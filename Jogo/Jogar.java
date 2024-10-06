@@ -28,6 +28,7 @@ public class Jogar extends W1
     {
         super();
         Greenfoot.setSpeed(50);
+        Jogador.temPuloDuplo = false;
     }
 
     public void act() {

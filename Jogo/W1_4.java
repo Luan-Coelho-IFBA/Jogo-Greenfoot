@@ -59,7 +59,7 @@ public class W1_4 extends W1
         addObject(new Grama(30, 450), 590, 375); // Lateral direita
         addObject(new Grama(100, 30), 60, 165); // Plataforma esquerda
         addObject(new Grama(100, 30), 540, 165); // Plataforma direita
-        addObject(new Lhama(), 540, 120); // Lhama
+        addObject(new LhamaBranca(), 540, 120); // Lhama
         addObject(new Grama(100, 30), 75, 480); // Plataforma #1
         addObject(new Grama(100, 30), 210, 380); // Plataforma #2
         addObject(new Grama(100, 30), 345, 280); // Plataforma #3

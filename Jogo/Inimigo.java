@@ -6,10 +6,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Inimigo extends Actor
+abstract public class Inimigo extends Actor
 {
+    protected int vida;
     private final int GRAVIDADE = 1;
     protected int velocidade;
+    private boolean acertadoPorTiro = false;
     
     public void cair() {
         if (!estaNoChao()) {
@@ -47,5 +49,27 @@ public class Inimigo extends Actor
         }
         
         return false;
+    }
+    
+    public void tomarDano() {
+        Actor tiro = getOneIntersectingObject(Tiro.class);
+        
+        if (tiro != null && !acertadoPorTiro) {
+            vida -= Tiro.dano;
+            acertadoPorTiro = true;
+            
+            getWorld().removeObject(tiro);
+        }
+        
+        if (tiro == null) {
+            acertadoPorTiro = false;
+        }
+        
+        if (vida <= 0) {
+            getWorld().removeObject(this);
+            vida = 10;
+            
+            Greenfoot.playSound("animalMorre.mp3");
+        }
     }
 }

@@ -7,72 +7,18 @@ import java.util.List;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class LhamaPreta extends Inimigo
+public class LhamaPreta extends Lhama
 {
-    private int vida = 10;
-    private boolean acertadoPorTiro = false;
-    private int TIRO_COOLDOWN = 30;
-    private int tiroCoolDown = 30;
-    private Jogador jogador = null;
+    public LhamaPreta() {
+        super.TIRO_COOLDOWN = 30;
+        super.tiroCoolDown = 30;
+        super.vida = 10;
+        super.imagemDireita = new GreenfootImage("lhama direita_Copy.png");
+        super.imagemEsquerda = new GreenfootImage("lhama esquerda_Copy.png");
+    }
     
     public void act()
     {
-        List<Jogador> jogadores = getWorld().getObjects(Jogador.class);
-        
-        if (!jogadores.isEmpty()) {
-            this.jogador = jogadores.get(0);
-        } else {
-            this.jogador = null;
-        }
-
-        virar();
-        cuspir();
-        super.cair();
-        super.ajeitarPosicao();
-        setLocation(getX(), getY() + super.velocidade);
-        tomarDano();
-    }
-    
-    public void cuspir() {
-        if (tiroCoolDown <= 0 && this.jogador != null) {
-            Cuspe cuspe = new Cuspe();
-            
-            getWorld().addObject(cuspe, getX(), getY());
-            cuspe.turnTowards(jogador.getX(), jogador.getY());
-            
-            tiroCoolDown = TIRO_COOLDOWN;
-        } else {
-            tiroCoolDown--;
-        }
-    }
-    
-    public void virar() {
-        if (jogador != null) {
-            if (jogador.getX() > getX()) {
-                setImage(new GreenfootImage("lhama direita_Copy.png"));
-            } else {
-                setImage(new GreenfootImage("lhama esquerda_Copy.png"));
-            }
-        }
-    }
-    
-    public void tomarDano() {
-        Actor tiro = getOneIntersectingObject(Tiro.class);
-        
-        if (tiro != null && !acertadoPorTiro) {
-            vida -= Tiro.dano;
-            acertadoPorTiro = true;
-            
-            getWorld().removeObject(tiro);
-        }
-        
-        if (tiro == null) {
-            acertadoPorTiro = false;
-        }
-        
-        if (vida <= 0) {
-            getWorld().removeObject(this);
-            vida = 400;
-        }
+        super.processar();
     }
 }

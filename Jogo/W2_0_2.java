@@ -32,6 +32,7 @@ public class W2_0_2 extends W2
         addObject(new Piso(60, 450), 600, 225); // Parede direita
         addObject(new Piso(100, 30), 540, 200); // Plataforma
         addObject(new LhamaPreta(), 530, 160);
+        addObject(new Pomba(), 11, 100);
         addObject(new Jogador(), 11, 510);
     }
 }

@@ -15,7 +15,6 @@ public class W2_0_1 extends W2
         prepare();
         this.contexto = contexto;
         super.jogador = getObjects(Jogador.class).get(0);
-        jogador.temPuloDuplo = true;
     }
     
     public void act() {

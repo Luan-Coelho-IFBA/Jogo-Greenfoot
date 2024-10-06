@@ -55,7 +55,7 @@ public class W1_3 extends W1
         addObject(new Grama(100, 30), 350, 390);
         addObject(new Grama(100, 30), 250, 290);
         addObject(new Grama(300, 30), 450, 175);
-        addObject(new Cobra(180), 540, 555);
-        addObject(new Lhama(), 500, 130);
+        addObject(new CobraVerde(180), 540, 555);
+        addObject(new LhamaBranca(), 500, 130);
     }
 }

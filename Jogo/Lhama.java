@@ -2,21 +2,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 
 /**
- * Write a description of class Llama here.
+ * Write a description of class Lhama here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Lhama extends Inimigo
+abstract public class Lhama extends Inimigo
 {
-    private int vida = 10;
-    private boolean acertadoPorTiro = false;
-    private int TIRO_COOLDOWN = 60;
-    private int tiroCoolDown = 60;
+    protected int TIRO_COOLDOWN;
+    protected int tiroCoolDown;
     private Jogador jogador = null;
+    protected GreenfootImage imagemDireita;
+    protected GreenfootImage imagemEsquerda;
     
-    public void act()
-    {
+    public void processar() {
         List<Jogador> jogadores = getWorld().getObjects(Jogador.class);
         
         if (!jogadores.isEmpty()) {
@@ -41,6 +40,8 @@ public class Lhama extends Inimigo
             cuspe.turnTowards(jogador.getX(), jogador.getY());
             
             tiroCoolDown = TIRO_COOLDOWN;
+            
+            Greenfoot.playSound("cuspe.mp3");
         } else {
             tiroCoolDown--;
         }
@@ -49,30 +50,10 @@ public class Lhama extends Inimigo
     public void virar() {
         if (jogador != null) {
             if (jogador.getX() > getX()) {
-                setImage(new GreenfootImage("lhama direita.png"));
+                setImage(imagemDireita);
             } else {
-                setImage(new GreenfootImage("lhama esquerda.png"));
+                setImage(imagemEsquerda);
             }
-        }
-    }
-    
-    public void tomarDano() {
-        Actor tiro = getOneIntersectingObject(Tiro.class);
-        
-        if (tiro != null && !acertadoPorTiro) {
-            vida -= Tiro.dano;
-            acertadoPorTiro = true;
-            
-            getWorld().removeObject(tiro);
-        }
-        
-        if (tiro == null) {
-            acertadoPorTiro = false;
-        }
-        
-        if (vida <= 0) {
-            getWorld().removeObject(this);
-            vida = 400;
         }
     }
 }

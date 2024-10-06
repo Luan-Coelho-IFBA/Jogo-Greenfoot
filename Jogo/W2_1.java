@@ -15,7 +15,6 @@ public class W2_1 extends W1
         prepare();
         this.mundo = mundo;
         super.jogador = getObjects(Jogador.class).get(0);
-        jogador.temPuloDuplo = false;
     }
     
     public void act() {
@@ -50,7 +49,7 @@ public class W2_1 extends W1
         grama4.setLocation(472,411);
         Jogador jogador = new Jogador();
         addObject(jogador,111,391);
-        Cobra cobra = new Cobra(135);
+        Cobra cobra = new CobraVerde(135);
         addObject(cobra,575,345);
         Grama grama5 = new Grama(300, 120);
         addObject(grama5,472,500);

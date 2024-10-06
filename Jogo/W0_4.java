@@ -57,7 +57,7 @@ public class W0_4 extends W1
         addObject(new Grama(100, 40), 250, 275);// Plataforma #3
         addObject(new Grama(100, 40), 525, 160);// Plataforma #4
         addObject(new Grama(50, 40), 550, 120);// Plataforma #4
-        Cobra cobra = new Cobra(160);
+        Cobra cobra = new CobraVerde(160);
         addObject(cobra,540,220);
     }
 }

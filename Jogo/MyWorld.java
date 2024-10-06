@@ -25,10 +25,17 @@ abstract public class MyWorld extends World
     private void tomarDano() {
         if (this.jogador.estaTocandoInimigo()) {
             this.vida -= 20;
+            Greenfoot.playSound("machucado.mp3");
         }
         
         if (this.jogador.estaTocandoCuspe()) {
             this.vida -= Cuspe.dano;
+            Greenfoot.playSound("machucado.mp3");
+        }
+        
+        if (this.jogador.estaTocandoOvo()) {
+            this.vida -= Ovo.dano;
+            Greenfoot.playSound("machucado.mp3");
         }
         
         if (this.vida <= 0) {

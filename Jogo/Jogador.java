@@ -8,12 +8,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Jogador extends Actor
 {
+    // Movimentação
     private int velocidadeAndar = 4;
     private final int GRAVIDADE = 1;
     private static int velocidade;
     private final int PULO_ALTURA = -15;
     public static boolean temPuloDuplo = false;
     private static boolean duploPulo = true;
+    
+    // Tiro
     private final int TIRO_COOLDOWN = 20;
     private int tiroCoolDown = 0;
     private final int DANO_COOLDOWN = 20;
@@ -35,16 +38,17 @@ public class Jogador extends Actor
     }
     
     public void movimentar() {
+        
         if (Greenfoot.isKeyDown("a") && podeMoverPraEsquerda()) {
             setLocation(getX() - velocidadeAndar, getY());
         }
         
         if (Greenfoot.isKeyDown("d") && podeMoverPraDireita()) {
-        setLocation(getX() + velocidadeAndar, getY());
+            setLocation(getX() + velocidadeAndar, getY());
         }
     }
     
-    public void cair() {
+    public void cair() {        
         if (!estaNoChao()) {
             velocidade += GRAVIDADE;
         } else {
@@ -99,6 +103,7 @@ public class Jogador extends Actor
                 getWorld().addObject(tiro, getX(), getY() - 20);
                 tiro.turnTowards(mouse.getX(), mouse.getY());
                 tiroCoolDown = TIRO_COOLDOWN;
+                Greenfoot.playSound("atirar.wav");
             }
         }
      }
@@ -106,6 +111,11 @@ public class Jogador extends Actor
     public boolean estaTocandoInimigo() {
         if (isTouching(Inimigo.class) && danoCoolDown <= 0) {
             danoCoolDown = DANO_COOLDOWN;
+            
+            if (isTouching(Cobra.class)) {
+                Greenfoot.playSound("ataqueCobra.mp3");
+            }
+            
             return true;
         } else {
             danoCoolDown--;
@@ -119,6 +129,18 @@ public class Jogador extends Actor
             danoCoolDown = DANO_COOLDOWN;
             Actor cuspe = getOneIntersectingObject(Cuspe.class);
             getWorld().removeObject(cuspe);
+            
+            return true;
+        }
+        
+        return false;
+    }
+    
+    public boolean estaTocandoOvo() {
+        if (isTouching(Ovo.class)) {
+            danoCoolDown = DANO_COOLDOWN;
+            Actor ovo = getOneIntersectingObject(Ovo.class);
+            getWorld().removeObject(ovo);
             
             return true;
         }

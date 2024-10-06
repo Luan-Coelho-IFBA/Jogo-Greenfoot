@@ -48,9 +48,9 @@ public class W0_2 extends W1
         addObject(grama4, 250, 90);
         Grama grama5 = new Grama(700, 60);
         addObject(grama5, 350, 600);
-        Lhama lhama = new Lhama();
+        Lhama lhama = new LhamaBranca();
         addObject(lhama,470,155);
-        Lhama lhama2 = new Lhama();
+        Lhama lhama2 = new LhamaBranca();
         addObject(lhama2,125,153);
     }
 }

@@ -42,7 +42,7 @@ public class W2_2 extends W1
         grama2.setLocation(460,570);
         Jogador jogador = new Jogador();
         addObject(jogador,32,350);
-        Cobra cobra = new Cobra(100);
+        Cobra cobra = new CobraVerde(100);
         addObject(cobra,572,474);
         Grama grama3 = new Grama(60, 20);
         addObject(grama3,255,410);

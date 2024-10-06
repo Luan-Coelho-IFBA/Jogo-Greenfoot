@@ -12,6 +12,7 @@ public class ContextoW2 extends W2
     public W2_0_2 w2_0_2 = new W2_0_2(this);
     public W2_0_3 w2_0_3 = new W2_0_3(this);
     public W2_1_3 w2_1_3 = new W2_1_3(this);
+    public W2_2_3 w2_2_3 = new W2_2_3(this);
     
     public ContextoW2()
     {

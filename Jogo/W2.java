@@ -17,5 +17,6 @@ public class W2 extends MyWorld
     {
         super();
         super.vida = 100;
+        Jogador.temPuloDuplo = true;
     }
 }
