@@ -15,5 +15,7 @@ public class W2 extends MyWorld
      */
     public W2()
     {
+        super();
+        super.vida = 100;
     }
 }

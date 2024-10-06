@@ -49,7 +49,7 @@ public class W0_4 extends W1
     public void prepare() {
         addObject(new Grama(700, 30), 300, 590); // Chão
         addObject(new Grama(450, 30), 225, 10); // Teto
-        addObject(new Grama(30, 450), 10, 225); // Lateral esquerda
+        addObject(new Grama(60, 450), 0, 225); // Lateral esquerda
         addObject(new Grama(30, 700), 590, 350); // Lateral direita
         addObject(new Grama(300, 325), 450, 417); // Bloco direita
         addObject(new Grama(100, 40), 250, 475);// Plataforma #1

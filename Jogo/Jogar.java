@@ -26,6 +26,7 @@ public class Jogar extends W1
      */
     public Jogar()
     {
+        super();
         Greenfoot.setSpeed(50);
     }
 

@@ -7,35 +7,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class W1 extends MyWorld
-{    
-    protected static int vida;
-    
+{        
     public W1()
     {
         super();
-        vida = 100;
-    }
-    
-    protected void processar() {
-        tomarDano();
-        mostrarVida();
-    }
-    
-    private void tomarDano() {
-        if (super.jogador.estaTocandoInimigo()) {
-            this.vida -= 20;
-        }
-        
-        if (super.jogador.estaTocandoCuspe()) {
-            this.vida -= Cuspe.dano;
-        }
-        
-        if (this.vida <= 0) {
-            removeObject(super.jogador);
-            super.jogador = null;
-        }
-    }
-    
-    private void mostrarVida() {
+        super.vida = 100;
     }
 }

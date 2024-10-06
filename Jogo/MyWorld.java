@@ -9,11 +9,35 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 abstract public class MyWorld extends World
 {   
     protected Jogador jogador;
+    protected static int vida;
     
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 600, 1);
+    }
+    
+    protected void processar() {
+        tomarDano();
+        mostrarVida();
+    }
+    
+    private void tomarDano() {
+        if (this.jogador.estaTocandoInimigo()) {
+            this.vida -= 20;
+        }
+        
+        if (this.jogador.estaTocandoCuspe()) {
+            this.vida -= Cuspe.dano;
+        }
+        
+        if (this.vida <= 0) {
+            removeObject(this.jogador);
+            this.jogador = null;
+        }
+    }
+    
+    private void mostrarVida() {
     }
     
     protected boolean irPraDireita(Jogador jogador, MyWorld mundo) {

@@ -12,7 +12,7 @@ public class Jogador extends Actor
     private final int GRAVIDADE = 1;
     private static int velocidade;
     private final int PULO_ALTURA = -15;
-    private static boolean temPuloDuplo = false;
+    public static boolean temPuloDuplo = false;
     private static boolean duploPulo = true;
     private final int TIRO_COOLDOWN = 20;
     private int tiroCoolDown = 0;

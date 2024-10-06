@@ -15,6 +15,7 @@ public class W2_1 extends W1
         prepare();
         this.mundo = mundo;
         super.jogador = getObjects(Jogador.class).get(0);
+        jogador.temPuloDuplo = false;
     }
     
     public void act() {

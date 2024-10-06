@@ -59,7 +59,7 @@ public class W0_3 extends W1
     private void prepare()
     {
         addObject(new Grama(700, 60), 300, 580);
-        addObject(new Grama(30, 400), 10, 200);
+        addObject(new Grama(60, 400), 0, 200);
         addObject(new Grama(300, 470), 450, 235);
         addObject(new Grama(100, 40), 250, 450);
         addObject(new Grama(100, 40), 70, 350);
