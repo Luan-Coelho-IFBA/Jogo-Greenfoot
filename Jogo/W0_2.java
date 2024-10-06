@@ -23,7 +23,7 @@ public class W0_2 extends W1
     
     public void act() {
         if (super.jogador != null) {
-            if (super.irPraDireita(jogador, mundo.w0_3)) {
+            if (super.irParaDireita(jogador, mundo.w0_3)) {
                 mundo.posicao = Posicao.ESQUERDA;
             }
             super.processar();

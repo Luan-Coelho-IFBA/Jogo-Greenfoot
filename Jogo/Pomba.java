@@ -45,7 +45,7 @@ public class Pomba extends Inimigo
             tiroCoolDown = TIRO_COOLDOWN;
             
             GreenfootSound ovoSaindo = new GreenfootSound("ovoSaindo.mp3");
-            ovoSaindo.setVolume(40);
+            ovoSaindo.setVolume(30);
             ovoSaindo.play();
         } else {
             tiroCoolDown--;

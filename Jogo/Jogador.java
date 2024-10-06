@@ -19,7 +19,7 @@ public class Jogador extends Actor
     // Tiro
     private final int TIRO_COOLDOWN = 20;
     private int tiroCoolDown = 0;
-    private final int DANO_COOLDOWN = 20;
+    private final int DANO_COOLDOWN = 40;
     private int danoCoolDown = 0;
     
     public Jogador() {

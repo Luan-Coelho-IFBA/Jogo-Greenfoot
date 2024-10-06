@@ -33,6 +33,7 @@ public class W2_1_3 extends W2
         addObject(new Piso(450, 30), 225, 420); // Plataforma #1
         addObject(new Piso(450, 30), 375, 220); // Plataforma #2
         addObject(new Piso(100, 80), 550, 180); // Plataforma #3
+        addObject(new Pomba(), 591, 70);
         addObject(new CobraVermelha(180), 430, 385);
         addObject(new Jogador(), 90, 550);
     }

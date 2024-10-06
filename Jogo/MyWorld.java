@@ -47,7 +47,7 @@ abstract public class MyWorld extends World
     private void mostrarVida() {
     }
     
-    protected boolean irPraDireita(Jogador jogador, MyWorld mundo) {
+    protected boolean irParaDireita(Jogador jogador, MyWorld mundo) {
         if (jogador.isAtEdge()) {
             if (jogador.getX() >= getWidth() - 10) {
                 Greenfoot.setWorld(mundo);

@@ -9,8 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class CobraVerde extends Cobra
 {
     public CobraVerde(int contagem) {
-        super.QUANTIDADE_PASSOS = contagem;
-        super.contagemPassos = super.QUANTIDADE_PASSOS;
+        super.QUANTIDADE_PASSOS = Math.abs(contagem);
+        super.contagemPassos = contagem;
         super.vida = 100;
     }
     

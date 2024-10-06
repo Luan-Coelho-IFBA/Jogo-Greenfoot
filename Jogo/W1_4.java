@@ -44,7 +44,7 @@ public class W1_4 extends W1
                 mundo.posicao = Posicao.DIREITA;
                 rodaUmaVez = false;
                 removeObject(jogador);
-            } else if (irPraDireita(jogador, mundo.w1_5)) {
+            } else if (irParaDireita(jogador, mundo.w1_5)) {
                 mundo.posicao = Posicao.ESQUERDA;
                 rodaUmaVez = false;
                 removeObject(jogador);

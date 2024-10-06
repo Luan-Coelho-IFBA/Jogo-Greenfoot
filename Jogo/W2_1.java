@@ -19,7 +19,7 @@ public class W2_1 extends W1
     
     public void act() {
         if (super.jogador != null) {
-            super.irPraDireita(jogador, mundo.w2_2);
+            super.irParaDireita(jogador, mundo.w2_2);
             super.processar();
         }
     }

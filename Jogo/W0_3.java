@@ -44,7 +44,7 @@ public class W0_3 extends W1
                 rodaUmaVez = false;
                 removeObject(jogador);
             }
-            else if (super.irPraDireita(jogador, mundo.w0_4)) {
+            else if (super.irParaDireita(jogador, mundo.w0_4)) {
                 mundo.posicao = Posicao.ESQUERDA;
                 rodaUmaVez = false;
                 removeObject(jogador);
