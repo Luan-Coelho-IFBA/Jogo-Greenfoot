@@ -148,6 +148,18 @@ public class Jogador extends Actor
         return false;
     }
     
+    public boolean estaTocandoBolaDeFogo() {
+        if (isTouching(BolaDeFogo.class)) {
+            danoCoolDown = DANO_COOLDOWN;
+            Actor bdf = getOneIntersectingObject(BolaDeFogo.class);
+            getWorld().removeObject(bdf);
+            
+            return true;
+        }
+        
+        return false;
+    }
+    
     public boolean estaNoChao() {
         int larguraJogador = getImage().getWidth();
         int alturaJogador = getImage().getHeight();

@@ -38,6 +38,11 @@ abstract public class MyWorld extends World
             Greenfoot.playSound("machucado.mp3");
         }
         
+        if (this.jogador.estaTocandoBolaDeFogo()) {
+            this.vida -= BolaDeFogo.dano;
+            Greenfoot.playSound("machucado.mp3");
+        }
+        
         if (this.vida <= 0) {
             removeObject(this.jogador);
             this.jogador = null;

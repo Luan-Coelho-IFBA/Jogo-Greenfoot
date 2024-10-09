@@ -16,9 +16,16 @@ public class W3 extends MyWorld
     public W3()
     {
         super();
+        prepare();
         super.vida = 100;
         Jogador.temPuloDuplo = true;
-        prepare();
+        super.jogador = getObjects(Jogador.class).get(0);
+    }
+    
+    public void act() {
+        if (super.jogador != null) {
+            super.processar();
+        }
     }
     
     public void prepare() {
@@ -29,5 +36,6 @@ public class W3 extends MyWorld
         addObject(new Piso(100, 30), 150, 400); // Plataforma #1
         addObject(new Piso(100, 30), 150, 200); // Plataforma #2
         addObject(new Jogador(), 150, 541);
+        addObject(new Boss(), 500, 330);
     }
 }

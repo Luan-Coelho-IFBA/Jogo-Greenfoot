@@ -14,11 +14,11 @@ public class Cuspe extends Projetil
     public void act()
     {
         move(velocidade);
-        this.checkIfReachEnd();
+        this.checarSeChegouNoFim();
     }
     
     @Override()
-    public void checkIfReachEnd() {
+    public void checarSeChegouNoFim() {
         if (isAtEdge()) {
             getWorld().removeObject(this);
         }

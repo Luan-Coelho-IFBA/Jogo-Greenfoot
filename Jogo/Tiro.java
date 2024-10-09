@@ -14,6 +14,6 @@ public class Tiro extends Projetil
     public void act()
     {
         move(velocidade);
-        super.checkIfReachEnd();
+        super.checarSeChegouNoFim();
     }
 }
