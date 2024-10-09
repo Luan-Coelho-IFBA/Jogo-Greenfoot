@@ -20,6 +20,7 @@ public class W2_3_3 extends W2
     public void act() {
         if (super.jogador != null) {
             super.irParaEsquerda(jogador, contexto.w2_3_2);
+            super.irParaCima(jogador, contexto.w2_4_3);
             super.processar();
         }
     }
