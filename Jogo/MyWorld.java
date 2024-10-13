@@ -50,6 +50,12 @@ abstract public class MyWorld extends World
     }
     
     private void mostrarVida() {
+        if (this.vida > 0) {
+            showText("VIDA: " + this.vida, 100, 20);
+        } else {
+            showText(" ", 100, 20);
+            showText("VOCÊ MORREU!", 300, 300);
+        }
     }
     
     protected boolean irParaDireita(Jogador jogador, MyWorld mundo) {
