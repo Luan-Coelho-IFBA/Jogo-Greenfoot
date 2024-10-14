@@ -53,6 +53,10 @@ public class Boss extends Inimigo
             b2.turn(-30);
             b3.turn(30);
             
+            GreenfootSound som = new GreenfootSound("fireball.mp3");
+            som.setVolume(80);
+            som.play();
+            
             tiroCoolDown = TIRO_COOLDOWN;
         } else {
             tiroCoolDown--;

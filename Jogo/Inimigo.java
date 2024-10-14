@@ -70,6 +70,10 @@ abstract public class Inimigo extends Actor
             vida = 10;
             
             Greenfoot.playSound("animalMorre.mp3");
+            
+            if (getClass().equals(Boss.class)) {
+                Greenfoot.setWorld(new GanhouJogo());
+            }
         }
     }
 }

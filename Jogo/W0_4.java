@@ -8,18 +8,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class W0_4 extends W1
 {
-    private Jogar mundo;
+    private ContextoW1 contexto;
     private boolean rodaUmaVez = false;
     
-    public W0_4(Jogar mundo)
+    public W0_4(ContextoW1 contexto)
     {
         prepare();
-        this.mundo = mundo;
+        this.contexto = contexto;
     }
     
     public void act() {
         if (!rodaUmaVez) {
-            if (mundo.posicao == Posicao.CIMA) {
+            if (contexto.posicao == Posicao.CIMA) {
                 addObject(new Jogador(), 520, 11);
             } else {
                 addObject(new Jogador() , 11, 545);
@@ -33,13 +33,13 @@ public class W0_4 extends W1
         }
         
         if (super.jogador != null) {
-            if (super.irParaEsquerda(jogador, mundo.w0_3)) {
-                mundo.posicao = Posicao.DIREITA;
+            if (super.irParaEsquerda(jogador, contexto.w0_3)) {
+                contexto.posicao = Posicao.DIREITA;
                 rodaUmaVez = false;
                 removeObject(jogador);
             }
-            else if (super.irParaCima(jogador, mundo.w1_4)) {
-                mundo.posicao = Posicao.BAIXO;
+            else if (super.irParaCima(jogador, contexto.w1_4)) {
+                contexto.posicao = Posicao.BAIXO;
                 rodaUmaVez = false;
                 removeObject(jogador);
             }

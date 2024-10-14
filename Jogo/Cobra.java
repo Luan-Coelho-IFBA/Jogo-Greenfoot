@@ -14,11 +14,11 @@ abstract public class Cobra extends Inimigo
     
     public void processar()
     {
-        cair();
+        super.cair();
         andar();
-        ajeitarPosicao();
+        super.ajeitarPosicao();
         setLocation(getX() + velocidadeAndar, getY() + super.velocidade);
-        tomarDano();
+        super.tomarDano();
     }
     
     public void andar() {

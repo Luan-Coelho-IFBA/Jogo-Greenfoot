@@ -9,20 +9,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class W1_5 extends W1
 {
 
-    private Jogar mundo;
+    private ContextoW1 contexto;
     
-    public W1_5(Jogar mundo)
+    public W1_5(ContextoW1 contexto)
     {
         prepare();
-        this.mundo = mundo;
+        this.contexto = contexto;
         super.jogador = getObjects(Jogador.class).get(0);
     }
     
     public void act() {
         if (super.jogador != null) {
             super.processar();
-            if (super.irParaEsquerda(jogador, mundo.w1_4)) {
-                mundo.posicao = Posicao.DIREITA;
+            if (super.irParaEsquerda(jogador, contexto.w1_4)) {
+                contexto.posicao = Posicao.DIREITA;
             }
         }
     }

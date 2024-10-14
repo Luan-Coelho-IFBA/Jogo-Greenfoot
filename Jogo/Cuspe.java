@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Cuspe extends Projetil
 {
-    public static int dano = 20;
+    public static int dano = 10;
     private int velocidade = 4;
     
     public void act()

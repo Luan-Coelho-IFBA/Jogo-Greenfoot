@@ -8,23 +8,23 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class W0_2 extends W1
 {
-    private Jogar mundo;
+    private ContextoW1 contexto;
 
     /**
      * Constructor for objects of class W0_2.
      * 
      */
-    public W0_2(Jogar mundo)
+    public W0_2(ContextoW1 contexto)
     {
         prepare();
-        this.mundo = mundo;
+        this.contexto = contexto;
         super.jogador = getObjects(Jogador.class).get(0);
     }
     
     public void act() {
         if (super.jogador != null) {
-            if (super.irParaDireita(jogador, mundo.w0_3)) {
-                mundo.posicao = Posicao.ESQUERDA;
+            if (super.irParaDireita(jogador, contexto.w0_3)) {
+                contexto.posicao = Posicao.ESQUERDA;
             }
             super.processar();
         }

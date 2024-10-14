@@ -8,20 +8,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class W1_4 extends W1
 {
-    private Jogar mundo;
+    private ContextoW1 contexto;
     private boolean rodaUmaVez = false;
 
-    public W1_4(Jogar mundo)
+    public W1_4(ContextoW1 contexto)
     {
-        this.mundo = mundo;
+        this.contexto = contexto;
         prepare();
     }
     
     public void act() {
         if (!rodaUmaVez) {
-            if (mundo.posicao == Posicao.ESQUERDA) {
+            if (contexto.posicao == Posicao.ESQUERDA) {
                 addObject(new Jogador(), 11, 120);
-            } else if (mundo.posicao == Posicao.BAIXO) {
+            } else if (contexto.posicao == Posicao.BAIXO) {
                 addObject(new Jogador(), 480, 520);
             } else {
                 addObject(new Jogador(), 589, 120);
@@ -35,17 +35,17 @@ public class W1_4 extends W1
         }
         
         if (jogador != null) {
-            if (irParaBaixo(jogador, mundo.w0_4)) {
-                mundo.posicao = Posicao.CIMA;
+            if (irParaBaixo(jogador, contexto.w0_4)) {
+                contexto.posicao = Posicao.CIMA;
                 rodaUmaVez = false;
                 removeObject(jogador);
             }
-            else if (irParaEsquerda(jogador, mundo.w1_3)) {
-                mundo.posicao = Posicao.DIREITA;
+            else if (irParaEsquerda(jogador, contexto.w1_3)) {
+                contexto.posicao = Posicao.DIREITA;
                 rodaUmaVez = false;
                 removeObject(jogador);
-            } else if (irParaDireita(jogador, mundo.w1_5)) {
-                mundo.posicao = Posicao.ESQUERDA;
+            } else if (irParaDireita(jogador, contexto.w1_5)) {
+                contexto.posicao = Posicao.ESQUERDA;
                 rodaUmaVez = false;
                 removeObject(jogador);
             }

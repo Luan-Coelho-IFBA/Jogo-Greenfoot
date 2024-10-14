@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Jogar extends W1
+public class ContextoW1 extends W1
 {
     public Posicao posicao;
     public W2_1 w2_1 = new W2_1(this);
@@ -24,7 +24,7 @@ public class Jogar extends W1
      * Constructor for objects of class Jogar.
      * 
      */
-    public Jogar()
+    public ContextoW1()
     {
         super();
         Greenfoot.setSpeed(50);

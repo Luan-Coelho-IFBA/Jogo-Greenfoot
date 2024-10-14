@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Castelo extends Actor
+public class Castelo extends ProximaFase
 {
     /**
      * Act - do whatever the Castelo wants to do. This method is called whenever
