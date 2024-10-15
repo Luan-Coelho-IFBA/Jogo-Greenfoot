@@ -15,6 +15,7 @@ public class Pomba extends Inimigo
     
     public Pomba() {
         super.vida = 50;
+        getImage().mirrorHorizontally();
     }
     
     public void act()
